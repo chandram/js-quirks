@@ -12,3 +12,17 @@ function that takes a string and a list of pairs of string indices representing 
 Assume: index pairs are in a valid order and within the string bounds
 
 index = [[]]
+
+### Map, Reduce, Filter
+Iterate Left to Right
+array.map((element, index, original_array) => {
+      // do something
+});
+array.filter((element, index, original_array) => {
+      // do something
+});
+array.reduce((previous_val, element, index, original_array) => {
+      // do something
+});
+// Get unique items in an array.
+a.filter((element, idx, array) => array.indexOf(element) === idx)
