@@ -1,7 +1,8 @@
 ## Sort Array
 
-# search a sorted array by repeatedly splitting the array in half using Binary Search
-# run the sort.js and binary-search.js togather
+search a sorted array by repeatedly splitting the array in half using Binary Search
+
+run the sort.js and binary-search.js togather
 
 ## HTML String Highlighter
 string_highlighter.js
@@ -14,7 +15,8 @@ Assume: index pairs are in a valid order and within the string bounds
 index = [[]]
 
 ## Map, Reduce, Filter
-Iterate Left to Right
+### Iterate Left to Right
+
 array.map((element, index, original_array) => {
       // do something
 });
@@ -28,4 +30,5 @@ array.reduce((previous_val, element, index, original_array) => {
 });
 
 // Get unique items in an array.
+
 a.filter((element, idx, array) => array.indexOf(element) === idx)
