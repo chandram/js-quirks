@@ -46,11 +46,12 @@ var expression = function() {
   console.log('Will this work?');
 };
 
-# Much like their function counterparts, class expressions are not hoisted.
+## Much like their function counterparts, class expressions are not hoisted.
 
-## Order of precedence
-# Function declarations are hoisted over variable declarations but not over variable assignments.
-# Variable assignment over function declaration
+#### Order of precedence
+
+### Function declarations are hoisted over variable declarations but not over variable assignments.
+### Variable assignment over function declaration
 
 var double = 22;
 function double(num) {
@@ -58,7 +59,7 @@ function double(num) {
 }
 console.log(typeof double); // Output: number #OK
 
-# Function declarations over variable declarations
+## Function declarations over variable declarations
 var double;
 function double(num) {
   return (num*2);
