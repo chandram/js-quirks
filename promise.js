@@ -39,7 +39,9 @@ function print(n) {
 /**
  * Promise Chain
  */
- //resolve cube value of input
+// Example 1
+
+//resolve cube value of input
 var cube = function(value) {
     return new Promise(function(resolve, reject) {
       setTimeout(function() {
@@ -51,3 +53,24 @@ var cube = function(value) {
   // Value:  2
   // value:  8
   // value:  512
+
+// Example 2
+  new Promise((resolve, reject) => {
+    request.get(url, (error, response, body) => {
+        if (body) {
+          resolve(JSON.parse(body));
+        } else {
+          resolve({});
+        }
+    })
+  }).then(() => { 
+      // do something
+  })
+  .catch((err) => console.log(err));
+
+  // Parallelize all promis tasks
+  Promise.all([
+     promise1, promise2, promise3
+  ]).then(() => {
+     // all tasks completed
+  })
