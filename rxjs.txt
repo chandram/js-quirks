@@ -1,0 +1,18 @@
+Angular uses RxJs in
+- EventEmitter
+- HTTPClient
+- Reactive Forms
+- Chain operators, subscribe, react
+
+Choose either reactive programmig or imperative.
+
+Streams -> Sequence of values overtime
+Reactive Programming: ->
+used by defining different STREAM & OPERATIONS that are performed in those Streams
+Observables (Primitive Type) are blueprint on how to create streams, subscribe, react to new values
+
+Rx.Observable is a blueprint that define set of streams.
+
+Rx.Observable
+  .interval(1000) // for 1000ms interval operator is going to push/publish no. to output stream , 0,1,2...
+  

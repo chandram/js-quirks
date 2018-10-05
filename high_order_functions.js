@@ -25,4 +25,3 @@ function consecutive (arr, fn) {
 let result = consecutive(letters, (x,y) => [x,y]);
 console.log(result);
 // [[a,b], [b,c], [c,d], [d,e], [e,f], [f,g]]
-

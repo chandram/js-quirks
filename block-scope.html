@@ -1,0 +1,88 @@
+<div dir="ltr" style="text-align: left;" trbidi="on">
+
+<div style="font-family: arial;">
+scope refers to the lifecycle of the variable, ie, where in the code its visible and how long
+
+<b>Understand "What is not a block scope"</b>
+curly braces doesnt mean block scope,
+<pre style="background: #f0f0f0; border: 1px dashed #cccccc; color: black;">
+<code style="color: black; word-wrap: normal;">{
+ // its not a block scope, but a global scope
+ var a = "mytest"
+}
+console.log(a) // prints mytest
+</code></pre>
+
+var a inside block overrides var a in function scope, so not a block scope
+<pre style="background: #f0f0f0; border: 1px dashed #cccccc; color: black;">
+<code style="color: black; word-wrap: normal;">
+function myfun() {
+  var a = "function scope";
+  for (var i = 0; i < 10; i++) {
+    var a = "override";
+  }
+  console.log(a)
+  // prints "override" as said the curly braces don't signify block scope.
+}
+</code></pre>
+
+
+<b>So how to declare block scope variable ?</b>
+ImmediatelyInvokedFunctionExpression (IIFE)
+
+<pre style="background: #f0f0f0; border: 1px dashed #cccccc; color: black;">
+<code style="color: black; word-wrap: normal;">
+(function () {
+  var a = "correct block scope";
+})()
+</code></pre>
+
+ie, the above myfun becomes
+
+<pre style="background: #f0f0f0; border: 1px dashed #cccccc; color: black;">
+<code style="color: black; word-wrap: normal;">
+function myfun() {
+  var a = "function scope";
+  for (var i = 0; i < 10; i++) {
+    (function () {
+      var a = "right block scope";
+    })()
+  }
+  console.log(a) // prints "function scope" .
+  // because variable a inside IIFE is in block scope.
+}
+</code></pre>
+
+With ES6 we have "let" keyword, use inplace of "var" keyword. This creates a variable with block level scope. So myFunc becomes
+
+<pre style="background: #f0f0f0; border: 1px dashed #cccccc; color: black;">
+<code style="color: black; word-wrap: normal;">
+function myfun() {
+  var a = "function scope";
+  for (var i = 0; i < 10; i++) {
+    let a = "right block scope";
+  }
+  console.log(a) // prints "function scope" .
+}
+</code></pre>
+
+var a is only visible between the for-loop and not outside the loop
+
+Ex:
+<pre style="background: #f0f0f0; border: 1px dashed #cccccc; color: black;">
+<code style="color: black; word-wrap: normal;">
+var myFuncArray = [];
+for (let i = 0; i < 5; i++) {
+  myFuncArray.push(function(){
+    console.log(i);
+  })
+}
+
+myFuncArray.forEach((myfun) => {
+  myfun(); //prints 0...4
+});
+</code></pre>
+
+
+</div>
+</div>
