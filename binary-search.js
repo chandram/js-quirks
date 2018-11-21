@@ -1,4 +1,4 @@
-let arr = [255, 266, 322, 453, 648, 657, 750, 861, 878, 963];
+  let arr = [255, 266, 322, 453, 648, 657, 750, 861, 878, 963];
 console.log(arr);
 let rand = Math.round(Math.random() * 20);
 console.log("rand ", rand);
